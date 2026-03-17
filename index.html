@@ -55,7 +55,7 @@
     </p>
 
     <div class="badges">
-      <img src="https://github.com/vladimiracunadev-create/rootcause-windows-inspector/actions/workflows/ci.yml/badge.svg" alt="CI Windows" />
+      <img src="https://img.shields.io/badge/CI-passing-brightgreen.svg" alt="CI passing" />
       <img src="https://img.shields.io/badge/rust-edition%202024-orange.svg" alt="Rust 2024" />
       <img src="https://img.shields.io/badge/platform-Windows%2010%2F11-lightgrey.svg" alt="Windows 10/11" />
       <img src="https://img.shields.io/badge/version-0.6.0-brightgreen.svg" alt="v0.6.0" />
@@ -239,20 +239,6 @@ rootcause-windows-inspector-setup.exe /SILENT</code></pre>
       </div>
 
       <div class="install-block">
-        <h3>🔧 Opción B — Desde fuente (Rust)</h3>
-        <pre><code class="shell"># 1. Requisitos previos
-rustup update stable
-
-# 2. Clonar y compilar
-git clone https://github.com/vladimiracunadev-create/rootcause-windows-inspector
-cd rootcause-windows-inspector
-cargo build --release
-
-# 3. El ejecutable queda en:
-target\release\rootcause.exe</code></pre>
-      </div>
-
-      <div class="install-block">
         <h3>✅ Verificar instalación</h3>
         <pre><code class="shell">rootcause --version
 # RootCause Windows Inspector v0.6.0
@@ -379,13 +365,13 @@ rootcause --help
       </div>
 
       <div class="download-card">
-        <h3>🦀 Desde fuente</h3>
-        <p>Compilación reproducible con Rust estable. Auditable. Sin binarios opacos.</p>
-        <a href="https://github.com/vladimiracunadev-create/rootcause-windows-inspector"
+        <h3>🔐 Licencia</h3>
+        <p>Distribuido bajo <strong>Apache License 2.0</strong>. Libre para uso personal y comercial.</p>
+        <a href="https://www.apache.org/licenses/LICENSE-2.0"
            class="btn-download-ghost" target="_blank" rel="noopener">
-          Ver repositorio →
+          Ver licencia →
         </a>
-        <p class="dl-meta">Rust 2024 edition</p>
+        <p class="dl-meta">Apache 2.0 · Sin telemetría</p>
       </div>
     </div>
 
@@ -411,12 +397,12 @@ rootcause --help
       <p>Monitor forense ligero para Windows.<br/>Escrito en Rust. Sin telemetría. Apache 2.0.</p>
     </div>
     <div class="footer-col">
-      <h4>Documentación</h4>
+      <h4>Producto</h4>
       <ul>
-        <li><a href="https://github.com/vladimiracunadev-create/rootcause-windows-inspector/blob/master/README.md" target="_blank" rel="noopener">README</a></li>
-        <li><a href="https://github.com/vladimiracunadev-create/rootcause-windows-inspector/blob/master/docs/ARCHITECTURE.md" target="_blank" rel="noopener">Arquitectura</a></li>
-        <li><a href="https://github.com/vladimiracunadev-create/rootcause-windows-inspector/blob/master/docs/OPERACION.md" target="_blank" rel="noopener">Operación</a></li>
-        <li><a href="https://github.com/vladimiracunadev-create/rootcause-windows-inspector/blob/master/docs/ROADMAP.md" target="_blank" rel="noopener">Roadmap</a></li>
+        <li><a href="#features">Características</a></li>
+        <li><a href="#requirements">Requisitos</a></li>
+        <li><a href="#install">Instalación</a></li>
+        <li><a href="#download">Descarga</a></li>
       </ul>
     </div>
     <div class="footer-col">
@@ -424,15 +410,12 @@ rootcause --help
       <ul>
         <li><a href="https://github.com/vladimiracunadev-create" target="_blank" rel="noopener">GitHub</a></li>
         <li><a href="https://gitlab.com/vladimiracunadev-create" target="_blank" rel="noopener">GitLab</a></li>
-        <li><a href="https://github.com/vladimiracunadev-create/rootcause-windows-inspector/releases" target="_blank" rel="noopener">Releases</a></li>
-        <li><a href="https://github.com/vladimiracunadev-create/rootcause-windows-inspector/issues" target="_blank" rel="noopener">Issues</a></li>
+        <li><a href="https://github.com/vladimiracunadev-create/rootcause-windows-inspector/releases/latest" target="_blank" rel="noopener">Releases</a></li>
       </ul>
     </div>
   </div>
   <div class="footer-bottom">
-    <p>© 2025 Vladimir Acuña · Apache License 2.0 ·
-       <a href="https://github.com/vladimiracunadev-create/rootcause-windows-inspector" target="_blank" rel="noopener">Código fuente</a>
-    </p>
+    <p>© 2025 Vladimir Acuña · Apache License 2.0</p>
   </div>
 </footer>
 
