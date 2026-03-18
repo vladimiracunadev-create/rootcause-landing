@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="RootCause Windows Inspector — Monitor forense ligero para Windows. Descubre qué proceso, servicio o conexión está degradando tu equipo." />
   <meta property="og:title" content="RootCause Windows Inspector" />
-  <meta property="og:description" content="Monitor forense ligero para Windows. Escrito en Rust. Sin telemetría activa." />
+  <meta property="og:description" content="Monitor forense ligero para Windows. Escrito en Rust. Telemetría: cero." />
   <meta property="og:type" content="website" />
   <title>RootCause Windows Inspector</title>
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
@@ -26,6 +26,7 @@
     </span>
     <nav class="nav-links">
       <a href="#features">Características</a>
+      <a href="#editions">Ediciones</a>
       <a href="#requirements">Requisitos</a>
       <a href="#install">Instalación</a>
       <a href="#cli">CLI</a>
@@ -58,13 +59,13 @@
       <img src="https://img.shields.io/badge/CI-passing-brightgreen.svg" alt="CI passing" />
       <img src="https://img.shields.io/badge/rust-edition%202024-orange.svg" alt="Rust 2024" />
       <img src="https://img.shields.io/badge/platform-Windows%2010%2F11-lightgrey.svg" alt="Windows 10/11" />
-      <img src="https://img.shields.io/badge/version-0.6.0-brightgreen.svg" alt="v0.6.0" />
       <img src="https://img.shields.io/badge/License-Apache%202.0-blue.svg" alt="Apache 2.0" />
-      <img src="https://img.shields.io/badge/telemetría-cero-success.svg" alt="Sin telemetría" />
+      <img src="https://img.shields.io/badge/versión-0.7.0-brightgreen.svg" alt="v0.7.0" />
+      <img src="https://img.shields.io/badge/telemetría-cero-success.svg" alt="Telemetría cero" />
     </div>
 
     <div class="hero-cta">
-      <a href="#download" class="btn-primary">⬇ Descargar v0.6.0</a>
+      <a href="#download" class="btn-primary">⬇ Descargar v0.7.0</a>
       <a href="#install"  class="btn-ghost">📖 Instrucciones</a>
     </div>
 
@@ -148,8 +149,8 @@
 
       <div class="feature-card">
         <div class="feature-icon">🛡</div>
-        <h3>Sin telemetría activa</h3>
-        <p>Sin red saliente. Sin analytics. Sin licencias en línea. Todo corre localmente. El código fuente es auditable.</p>
+        <h3>Telemetría: cero</h3>
+        <p>Sin red saliente. Sin analytics. Sin licencias en línea. Todo corre localmente. El código fuente es auditable. Verificable en <code>Cargo.toml</code>.</p>
       </div>
 
     </div>
@@ -176,6 +177,66 @@
           <tr><td><code>ℹ Acerca</code></td><td>Versión, autor, links, tech stack, atajos</td><td>—</td></tr>
         </tbody>
       </table>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════  EDITIONS  ═════════════════════════ -->
+<section id="editions" class="section section-alt">
+  <div class="container">
+    <h2 class="section-title">📦 Ediciones del producto</h2>
+    <p class="section-sub">Un único código fuente en Rust, múltiples formas de usarlo según tu flujo de trabajo.</p>
+
+    <div class="feature-grid">
+
+      <div class="feature-card">
+        <div class="feature-icon">🪟</div>
+        <h3>GUI — Aplicación de escritorio</h3>
+        <p>Interfaz gráfica completa con 8 pestañas, sparklines, historial y panel ETW/WPR. La edición principal para diagnóstico interactivo. <strong>~18 MB.</strong></p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">💻</div>
+        <h3>CLI-only — Consola ligera</h3>
+        <p>Compilado sin egui (<code>--no-default-features</code>). Ideal para scripts, Windows Server Core y pipelines CI. Todos los comandos disponibles. <strong>~4 MB.</strong></p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">⚡</div>
+        <h3>PowerShell Module</h3>
+        <p>9 cmdlets nativos: <code>Get-RootCauseStatus</code>, <code>Get-RootCauseProcesses</code>, <code>Stop-RootCauseProcess</code>… Integración directa en scripts empresariales.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">🧩</div>
+        <h3>VS Code Extension</h3>
+        <p>Barra de estado con CPU · RAM · severidad en tiempo real. Alerta cuando el sistema pasa a Critical. Panel de snapshot sin salir del editor.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">🔔</div>
+        <h3>Tray icon <span style="font-size:0.75em;opacity:0.6">(próximamente)</span></h3>
+        <p>Ícono de bandeja del sistema que cambia de color según la severidad. Monitor proactivo: te avisa cuando hay un problema sin que tengas que abrir nada.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">⚙</div>
+        <h3>Windows Service <span style="font-size:0.75em;opacity:0.6">(próximamente)</span></h3>
+        <p>Captura en background sin usuario logueado. Historial continuo 24/7. Diagnóstico de problemas nocturnos y de arranque. Instalación via <code>sc.exe</code>.</p>
+      </div>
+
+    </div>
+
+    <div class="install-block" style="margin-top:2rem">
+      <h3>📦 Instalar via gestor de paquetes</h3>
+      <pre><code class="shell"># Scoop (desarrolladores)
+scoop install rootcause
+
+# Winget (usuarios técnicos)
+winget install VladimirAcuna.RootCause
+
+# Chocolatey (sysadmins enterprise)
+choco install rootcause-windows-inspector</code></pre>
     </div>
   </div>
 </section>
@@ -229,19 +290,39 @@
     <div class="install-tabs">
 
       <div class="install-block">
-        <h3>📦 Opción A — Instalador silencioso (recomendado)</h3>
+        <h3>🪟 Opción A — Instalador Windows (recomendado)</h3>
         <pre><code class="shell"># Descarga el instalador y ejecútalo
 rootcause-windows-inspector-setup.exe
 
-# O instalación desatendida
-rootcause-windows-inspector-setup.exe /SILENT</code></pre>
+# O instalación desatendida (corporativo)
+rootcause-windows-inspector-setup.exe /SILENT /SUPPRESSMSGBOXES /NORESTART</code></pre>
         <p class="install-note">El instalador agrega <code>rootcause</code> al PATH del sistema automáticamente.</p>
+      </div>
+
+      <div class="install-block">
+        <h3>📦 Opción B — Gestores de paquetes</h3>
+        <pre><code class="shell"># Scoop
+scoop install rootcause
+
+# Winget
+winget install VladimirAcuna.RootCause
+
+# Chocolatey
+choco install rootcause-windows-inspector</code></pre>
+      </div>
+
+      <div class="install-block">
+        <h3>⚡ Opción C — PowerShell module</h3>
+        <pre><code class="shell"># Descarga RootCause.psm1 y úsalo directamente
+Import-Module .\RootCause.psm1
+Get-RootCauseStatus
+Get-RootCauseProcesses | Where-Object Severity -eq "Critical"</code></pre>
       </div>
 
       <div class="install-block">
         <h3>✅ Verificar instalación</h3>
         <pre><code class="shell">rootcause --version
-# RootCause Windows Inspector v0.6.0
+# RootCause Windows Inspector v0.7.0
 
 rootcause --help
 # muestra todos los comandos disponibles</code></pre>
@@ -300,7 +381,7 @@ rootcause --help
 <pre><span class="t-prompt">C:\&gt;</span> rootcause status
 
 <span class="t-box">┌─────────────────────────────────────────────┐
-│  RootCause Windows Inspector  v0.6.0        │
+│  RootCause Windows Inspector  v0.7.0        │
 │  Estado del sistema                         │
 ├─────────────────────────────────────────────┤
 │  Severidad  : ⚠ WARNING                     │
@@ -340,38 +421,48 @@ rootcause --help
 <section id="download" class="section download-section">
   <div class="container">
     <h2 class="section-title">📥 Descargar</h2>
-    <p class="section-sub">Binario nativo para Windows x64. Sin dependencias externas. Sin instalador opcional.</p>
+    <p class="section-sub">Binario nativo para Windows x64. Sin dependencias externas. Telemetría: cero.</p>
 
     <div class="download-grid">
       <div class="download-card primary">
         <div class="dl-badge">Recomendado</div>
         <h3>🪟 Instalador Windows</h3>
-        <p>Instalador Inno Setup. Agrega <code>rootcause</code> al PATH. Desinstalación limpia desde Panel de control.</p>
+        <p>Inno Setup. Agrega <code>rootcause</code> al PATH. Desinstalación limpia desde Panel de control. GUI completa + CLI.</p>
         <a href="https://github.com/vladimiracunadev-create/rootcause-landing/releases/latest"
            class="btn-download" target="_blank" rel="noopener">
           ⬇ rootcause-setup.exe
         </a>
-        <p class="dl-meta">Windows 10/11 x64 · Apache 2.0</p>
+        <p class="dl-meta">Windows 10/11 x64 · ~18 MB · Apache 2.0</p>
       </div>
 
       <div class="download-card">
-        <h3>📦 Ejecutable portable</h3>
-        <p>Un solo <code>.exe</code>. Sin instalación. Cópialo donde necesites.</p>
+        <h3>📦 Portable ZIP (CLI-only)</h3>
+        <p>Ejecutable ligero <strong>~4 MB</strong> sin GUI. Ideal para scripts, Server Core y pipelines CI.</p>
         <a href="https://github.com/vladimiracunadev-create/rootcause-landing/releases/latest"
            class="btn-download-ghost" target="_blank" rel="noopener">
-          ⬇ rootcause.exe
+          ⬇ rootcause-windows-x64.zip
         </a>
-        <p class="dl-meta">Windows 10/11 x64</p>
+        <p class="dl-meta">Windows 10/11 x64 · ~4 MB</p>
+      </div>
+
+      <div class="download-card">
+        <h3>⚡ PowerShell Module</h3>
+        <p>Módulo <code>RootCause.psm1</code> con 9 cmdlets nativos. Integra RootCause en cualquier script de automatización.</p>
+        <a href="https://github.com/vladimiracunadev-create/rootcause-landing/releases/latest"
+           class="btn-download-ghost" target="_blank" rel="noopener">
+          ⬇ RootCause.psm1
+        </a>
+        <p class="dl-meta">PowerShell 5.1+ · Windows</p>
       </div>
 
       <div class="download-card">
         <h3>🔐 Licencia</h3>
-        <p>Distribuido bajo <strong>Apache License 2.0</strong>. Libre para uso personal y comercial.</p>
+        <p>Distribuido bajo <strong>Apache License 2.0</strong>. Libre para uso personal y comercial. Código auditable.</p>
         <a href="https://www.apache.org/licenses/LICENSE-2.0"
            class="btn-download-ghost" target="_blank" rel="noopener">
           Ver licencia →
         </a>
-        <p class="dl-meta">Apache 2.0 · Sin telemetría activa</p>
+        <p class="dl-meta">Apache 2.0 · Telemetría: cero</p>
       </div>
     </div>
 
@@ -394,12 +485,13 @@ rootcause --help
         </svg>
         RootCause Windows Inspector
       </span>
-      <p>Monitor forense ligero para Windows.<br/>Escrito en Rust. Sin telemetría activa. Apache 2.0.</p>
+      <p>Monitor forense ligero para Windows.<br/>Escrito en Rust. Telemetría: cero. Apache 2.0.</p>
     </div>
     <div class="footer-col">
       <h4>Producto</h4>
       <ul>
         <li><a href="#features">Características</a></li>
+        <li><a href="#editions">Ediciones</a></li>
         <li><a href="#requirements">Requisitos</a></li>
         <li><a href="#install">Instalación</a></li>
         <li><a href="#download">Descarga</a></li>
